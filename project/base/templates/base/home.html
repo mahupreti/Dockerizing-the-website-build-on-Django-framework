@@ -1,0 +1,161 @@
+
+{% extends 'base/navbar.html' %}  
+<!-- {% load static %} -->
+<title>{% block title %} Yogesh Upreti{% endblock title %}</title>
+
+{% block content %}
+    <header class="masthead">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+              <div class="site-heading">
+                <h3 class=" site-heading my-4 mt-3 text-black"> Welcome to the world of Yogesh Upreti✍️ </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card card-body h-100  border-info" id="profile-wrapper">
+					<img id="profile-pic" src="{% static 'images/yogesh.JPG' %}" >
+					<hr>
+                    <h5 class="card-header">Mahesh Upreti</h5>
+                              <div class="card-body">
+                                <!-- <p class="card-text"> Oh hey! It's me Mahesh Upreti and yeah don't confuse with yogesh upreti. That is also me . LOL</p> -->
+                                <!-- <a href="https://bekbrace.com" class="btn btn-danger">Visit Website!</a> -->
+                    
+                                <a href="{% static 'images/my-cv.pdf' %}" class="btn btn-primary" download>Download CV</a>
+                              </div>
+				</div>
+			</div>
+
+			<div class="col-md-9">
+				<div class="card card-body h-100  border-info">
+					<h4>About Me ???</h4>
+					<hr>
+					<pre>Well, First of all I would like to say I am definitely not a front-end guy ( as you can guess after looking this site :) </pre>
+					<pre>Then Who am I ? 
+                        
+I am just a normal person who always tried out many different things but somehow now wants to master one. So, today I am here with my website in your hand to share different things that I have learnt from my experiences.</pre>
+                        <!-- <div class="footer-icons">
+                            <a href="https://www.facebook.com/yogesh.upreti.98"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-github"></i></a>
+                      
+                          </div> -->
+				</div>
+			</div>
+		</div>
+    </div>
+        <br>
+		<div class= "container"></div>
+            <hr>
+            <header class="masthead">
+                <div class="overlay"></div>
+                <div class="container">
+                <div class="row">
+                    <div class=" col-md-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h3 class=" site-heading my-4 mt-3 text-black"> My projects ✨✨✨ </h3>
+                        <!-- <p class="text-dark">Django is Awesome </p> -->
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </header>
+            <hr>
+                <div class="container" id="projects">
+                <div class="card">
+                    <div class="card-header" id="project1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                        Music Genre Classification Using Neural Networks
+                        </button>
+                    </h5>
+                    </div>
+                    <div id="collapse1" class="collapse" aria-labelledby="project1" data-parent="#projects">
+                    <div class="card-body">
+                        <p>The team member consists of Aajay sapkota, sanjeev bhandari, abinash acharya and me, yogesh upreti.</p>
+                    </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card">
+                    <div class="card-header" id="project2">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        Railway management system
+                        </button>
+                    </h5>
+                    </div>
+                    <div id="collapse2" class="collapse" aria-labelledby="project2" data-parent="#projects">
+                    <div class="card-body">
+                        <p>Github link coming soon</p>
+                    </div>
+                    </div>
+                </div>
+
+                </div>
+
+                <script>
+                var coll = document.getElementsByClassName("collapse");
+                var i;
+            
+                for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                    content.style.display = "none";
+                    } else {
+                    content.style.display = "block";
+                    }
+                });
+                }
+                </script>	
+            </div>
+            <br>
+        
+            <header class="masthead">
+                <div class="overlay"></div>
+                <div class="container">
+                <div class="row">
+                    <div class=" col-md-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h3 class=" site-heading my-4 mt-3 text-black"> Welcome to My Blog ✍️ </h3>
+                        <!-- <p class="text-dark">Django is Awesome ✨✨✨ </p> -->
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </header>
+            <div class="container">
+                <div class="row">
+                <!-- Blog Entries Column -->
+                <div class="col-md-12 mt-3 left">
+                    {% for post in posts %}
+                    <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <hr>
+                        <!-- <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p> -->
+                        <pre>{{post.intro}}</pre>
+                        <a href="{% url 'post_detail' post.category.slug post.slug  %}" class="btn btn-danger">Read More &rarr;</a>
+                        <!-- <a href="https://bekbrace.com" class="btn btn-danger">Visit Website!</a> -->
+                        <!-- <a href="https://docs.djangoproject.com/en/3.1/" class="btn btn-secondary">Django Docs</a>  -->
+                    </div>
+                    </div>
+                    {% endfor %}
+                </div>    
+        </div>
+    {% include 'base/footer.html' %}
+
+    {% endblock %}
+
+
+
+

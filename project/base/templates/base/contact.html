@@ -1,0 +1,87 @@
+
+
+{% extends 'base/navbar.html' %}
+<title>{% block title %} message{% endblock title %}</title>
+
+
+{% block content %}
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Contact Me Anonymously</h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form method="post">
+          {% csrf_token %}
+
+          <div class="form-group" >
+            {{ form.message }}
+          </div>
+          <button type="submit" class="btn btn-primary">Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <style>
+    .container {
+      background-color: #fff;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 50px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 18px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      background-color: #f5f5f5;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+      color: #333;
+      box-shadow: none;
+    }
+
+    textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0062cc;
+    }
+  </style>
+
+
+{% endblock %}
+
+
+{% include 'base/footer.html' %}
+
+
+
+

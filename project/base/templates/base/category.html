@@ -1,0 +1,47 @@
+{% extends 'base/navbar.html' %}
+
+
+    <title>{% block title %} Category{% endblock title %}</title>
+
+
+{% block content %}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+    <div class="row">
+        <div class=" col-md-8 col-md-10 mx-auto">
+        <div class="site-heading">
+            <!-- <h3 class=" site-heading my-4 mt-3 text-black"> Read blogs </h3> -->
+            <!-- <p class="text-dark">Django is Awesome ✨✨✨ </p> -->
+        </div>
+        </div>
+    </div>
+    </div>
+</header>
+<br>
+<div class="container">
+    <div class="row">
+    <!-- Blog Entries Column -->
+        <div class="col-md-12 mt-3 left">
+            {% for post in posts %}
+            <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p>{{ post.created_at|timesince }} ago</p>
+                <hr>
+                <!-- <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p> -->
+                <pre class="card-text">{{post.intro}}</pre>
+                <a href="{% url 'post_detail' post.category.slug post.slug  %}" class="btn btn-danger">Read More &rarr;</a>
+
+            </div>
+            </div>
+            {% endfor %}
+        </div>    
+
+    </div>
+</div>
+{% include 'base/footer.html' %} 
+
+{% endblock  %}
+<!-- {% include 'base/footer.html' %} -->

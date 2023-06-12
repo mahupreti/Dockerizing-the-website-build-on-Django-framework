@@ -1,0 +1,143 @@
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+ 
+  }
+  .card {
+    box-shadow: 0 16px 48px #6a6a6b;
+  }
+  
+  
+  #profile-wrapper {
+    text-align: center;
+  }
+  
+  .social-media-container a {
+    margin: 0 10px;
+    vertical-align: middle;
+  }
+  
+  .social-media-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  #profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .social-links ul,
+  li {
+    list-style-type: none;
+    display: inline-block;
+  }
+  
+  .social {
+    width: 20px;
+    height: 20px;
+  } 
+ 
+  .collapsible {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    background-color: rgba(85, 85, 85, 0.142);
+  }
+  
+  .active,
+  .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  a:hover {
+    color: red;
+    text-decoration: underline;
+  }
+  
+  pre  {
+    white-space: pre-wrap;      
+    white-space: -moz-pre-wrap;  
+    white-space: -pre-wrap;      
+    white-space: -o-pre-wrap;    
+    word-wrap: break-word;       
+    text-align: justify;
+   } 
+  
+  
+   body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation bar styles */
+  nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+    font-size: 18px;
+  }
+  nav a:hover {
+    color: #00c3ff;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  nav li {
+    margin-right: 20px;
+  }
+  nav li:last-child {
+    margin-right: 0;
+  }
+  nav img {
+    height: 50px;
+    margin-right: 20px;
+  }
+ 
